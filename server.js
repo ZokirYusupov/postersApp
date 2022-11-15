@@ -7,6 +7,8 @@ const MongoStore = require('connect-mongodb-session')(session)
 const flash = require('connect-flash')
 const helpers = require('./utils/hbsHelpers')
 const connectDb = require('./config/db')
+const helmet = require('helmet');
+const compression = require('compression')
 // env variables
 dotenv.config()
 //connecting database
@@ -43,7 +45,11 @@ app.use(session({
   saveUninitialized: false,
   store,
 }))
+
+
 app.use(flash())
+app.use(helmet())
+app.use(compression(2222))
 
 // static file
 app.use( express.static(path.join(__dirname, 'public')) )
