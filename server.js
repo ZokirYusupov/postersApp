@@ -10,7 +10,7 @@ const connectDb = require('./config/db')
 const helmet = require('helmet');
 const compression = require('compression')
 // env variables
-dotenv.config()
+dotenv.config();
 //connecting database
 connectDb() 
 
