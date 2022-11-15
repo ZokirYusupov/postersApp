@@ -2,7 +2,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
-dotenv.config()
+dotenv.config();
 
 const Poster = require('./models/posterModel')
 const User = require('./models/userModel')
