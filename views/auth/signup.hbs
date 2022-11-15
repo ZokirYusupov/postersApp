@@ -1,0 +1,55 @@
+<div class="container mtt">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+            {{#if regError}}
+      <div class="alert alert-danger" role="alert">{{regError}}</div>
+      {{/if}}
+      <div class="card p-4 mb-5">
+        <form action="/auth/signup" method="post">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="example@mail.com"
+              id="email"
+              name="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Eshmatov Toshmat"
+              id="username"
+              name="username"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone number</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="998911234567"
+              id="phone"
+              name="phone"
+              value="+998"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password"/>
+          </div>
+          <div class="mb-3">
+            <label for="password2" class="form-label">Password repeat</label>
+            <input type="password" class="form-control" id="password2" name="password2" />
+          </div>
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Registratsiya</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+                <div class="container">
+          <div class="row">
+            <div class="col-lg-8">
+    {{#if poster}}
+              <div class="container mb-5 mtt">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="card">
+                      <img src="{{url}}{{poster.image}}" class="rounded mt-lg-3 mb-lg-3 img-fluid img-poster-page mx-auto d-block" alt="...">
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="container mb-5">
+                  <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                          <div class="card">
+                            <div class="mb-3"><p class="card-text"><small class="text-muted">Joylangan sana - 11.07.2021 16:45</small></p></div>
+                            <h3 class="poster-page-title">{{poster.title}}</h3>
+                            <h1 class="poster-page-amount mb-5">{{poster.amount}} SO'M</h1>
+                            <h5>Tavsif</h5>
+                            {{{poster.description}}}
+                              <hr>
+                              <div class="d-flex justify-content-between">
+                                <p>ID: {{poster._id}}</p>
+                                <p>Ko'rildi:{{poster.visits}}</p>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="container mb-5 mtt">
+                <div class="row">
+                  <div class="card p-3">
+                    <h4 class="mb-5">Foydalanuvchi</h4>
+                    <div class="d-flex justify-content-between">
+                      <img 
+                        src="{{url}}/assets/noAvatar.png" 
+                        class="rounded-circle img-fluid" 
+                        alt="Cinque Terre"
+                        style="width: 100px; height: 100px">
+                      <div class="d-flex flex-column">
+                        <a href="/profile/{{author.username}}"><h5>{{author.username}}</h5></a>
+                        <p>Saytda: {{formatDate author.createdAt}} dan beri</p>
+                        <p>E'lonlar soni: {{author.posters.length}}</p>
+                      </div>
+                    </div>
+                    <a href="#" type="button" class="btn btn-outline-secondary">{{author.phone}}</a>
+                    <a href="/profile/{{author.username}}" type="button" class="btn mt-3 btn-success">Muallifning boshqa e'lonlari</a>
+                    {{#if isAuthor}}
+                    <a href="/posters/{{poster._id}}/edit" type="button" class="btn mt-3 btn-warning">Elonni ozgartirish</a>
+                      <form action="/posters/{{poster._id}}/delete" class="d-grid" method="POST">
+                                            <button "type"="submit" class="btn mt-3 btn-danger">Elonni o'chirish</button>
+                      </form>
+                      {{/if}}
+                  </div>
+                </div>
+              </div>
+                    {{else}}
+          <div class="container mtt">
+            <h1>Xatolik</h1>
+          </div>
+      {{/if}}
+            </div>
+          </div>
+        </div>
+

@@ -1,0 +1,49 @@
+<div class="container mtt">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+            {{#if regError}}
+      <div class="alert alert-danger" role="alert">{{regError}}</div>
+      {{/if}}
+      <div class="card p-4 mb-5">
+      {{#if user}}
+        <form action="/profile/change" method="post">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="example@mail.com"
+              id="email"
+              name="email"
+              value="{{user.email}}"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone number</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="998911234567"
+              id="phone"
+              name="phone"
+               value="{{user.phone}}"
+              
+            />
+          </div>
+          <div class="mb-3">
+            <label for="oldPassword" class="form-label">Old Password</label>
+            <input type="password" class="form-control" id="oldPassword" name="oldPassword"/>
+          </div>
+          <div class="mb-3">
+            <label for="newPassword" class="form-label">new Password</label>
+            <input type="password" class="form-control" id="newPassword" name="newPassword" />
+          </div>
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">O'zgartirish</button>
+          </div>
+        </form>
+      {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
